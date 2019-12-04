@@ -56,7 +56,7 @@ if (gp1.aButtonPressed()) {
     robot.setAutoState(AutoState.CYCLE_STONES);
 }
 ```
---
+---
 As you can see, FTC programming would be much more intuitive with the above systems.
 All we have to do is add enough documentation so that even someone who has never programmed
 in FTC before can write an incredible robot program in a relatively minimal amount of time.
