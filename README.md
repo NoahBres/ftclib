@@ -26,3 +26,11 @@ turn = gp1.joyRight.x;
 
 dt.driveRobot(x, y, turn);
 ```
+For a simple CV pipeline using a camera server, you can do:
+```java
+Camera cmr = new Camera("webcam");
+
+res = cmr.getInstance();
+
+if (res.hasSkystone()) robot.pathTo(res.atSkystone());
+```
