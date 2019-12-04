@@ -26,11 +26,47 @@ turn = gp1.joyRight.x;
 
 dt.driveRobot(x, y, turn);
 ```
-For a simple CV pipeline using a camera server, you can do:
+For a simple CV pipeline that aligns the robot with a skystone using a camera server:
 ```java
-Camera cmr = new Camera("webcam");
+// create server
+CameraServer cmr = new CameraServer("webcam");
 
+// obtain server info for a certain instance
 res = cmr.getInstance();
 
-if (res.hasSkystone()) robot.pathTo(res.atSkystone());
+// if the skystone is not in range
+while (!res.hasObject(VisualObject.SKYSTONE)) robot.strafe(Safety.SWIFT);
+robot.setSafetyMode(Safety.EASE_OFF);
+
+// align robot with the skystone
+robot.centerRobotWithObject(res.getObject(VisualObject.SKYSTONE));
 ```
+If you want to have the robot switch to an automatic mode during teleop:
+```java
+// upon a button pressed on gamepad1
+if (gp1.aButtonPressed()) {
+    // end manual mode -> immediate seize of toolop commands
+    robot.endManual();
+    robot.forceReset(Safety.EASE_OFF); // stop the robot, but easily
+    
+    // set safety mode to determined default
+    robot.setSafetyMode(Safety.DEFAULT);
+    
+    // cycle stones from human player
+    robot.setAutoState(AutoState.CYCLE_STONES);
+}
+```
+--
+As you can see, FTC programming would be much more intuitive with the above systems.
+All we have to do is add enough documentation so that even someone who has never programmed
+in FTC before can write an incredible robot program in a relatively minimal amount of time.
+
+## How Can You Help?
+
+You think can help us out? Well, you can make a pull request at any time.
+And, if you have FRC or external FTC library experience, then feel free to contact
+us at any time for potential collaborator status.
+
+## Authors
+
+Jackson from ARC Robotics, Daniel from JDroids, Pranav from TecHounds.

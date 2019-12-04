@@ -1,10 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.arcrobotics.ftclib"
+        // applicationId "com.arcrobotics.ftclib"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
@@ -20,7 +20,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation fileTree(dir: '../app/main/libs', include: ['*.aar'])
+    // implementation name:'robotcore-stock-5.3', ext:'aar'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
