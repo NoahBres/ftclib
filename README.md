@@ -10,7 +10,7 @@ Download the library and port to your ftc-app project.
 In the build.gradle file of your teamcode, type the following:
 ```gradle
 dependencies {
-    compileOnly ':com.arcrobotics.ftclib:1.0'
+    implementation ':com.arcrobotics.ftclib:1.0'
 }
 ```
 
