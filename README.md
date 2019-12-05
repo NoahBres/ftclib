@@ -24,7 +24,7 @@ x = gp1.joyLeft.x;
 y = gp1.joyLeft.y;
 turn = gp1.joyRight.x;
 
-dt.driveRobot(x, y, turn);
+dt.driveRobotCentric(x, y, turn);
 ```
 For a simple CV pipeline that aligns the robot with a skystone using a camera server:
 ```java
@@ -60,7 +60,7 @@ if (gp1.aButtonPressed()) {
 As you can see, FTC programming would be much more intuitive with the above systems.
 All we have to do is add enough documentation so that even someone who has never programmed
 in FTC before can write an incredible robot program in a relatively minimal amount of time.
-
+ 
 ## How Can You Help?
 
 You think can help us out? Well, you can make a pull request at any time.
@@ -69,4 +69,5 @@ us at any time for potential collaborator status.
 
 ## Authors
 
-Jackson from ARC Robotics, Daniel from JDroids, Pranav from TecHounds.
+Jackson from ARC Robotics, Daniel from JDroids, Pranav from TecHounds,
+Noah from Radical Raiders.

@@ -35,8 +35,6 @@ public abstract class RobotDrive {
         // constructor uwu
     }
 
-    public abstract void stopMotor();
-
     /**
      * Scale the output speed to the specified maxOutput value.
      * The drivespeed is multiplied by this value.
@@ -76,6 +74,8 @@ public abstract class RobotDrive {
                 : value >= rangeMax ? rangeMax
                 : value;
     }
+
+    public abstract void stopMotor();
 
     /**
      * Normalize the wheel speeds if any value is greater than 1
