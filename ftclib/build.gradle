@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: '../app/main/libs', include: ['*.aar'])
+    implementation fileTree(dir: '../ftclib/main/libs', include: ['*.aar'])
     // implementation name:'robotcore-stock-5.3', ext:'aar'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'

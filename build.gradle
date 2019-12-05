@@ -19,7 +19,7 @@ allprojects {
         google()
         jcenter()
         flatDir {
-            dirs rootProject.files('../app/main/libs')
+            dirs rootProject.files('../ftclib/main/libs')
         }
     }
 }
