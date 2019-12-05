@@ -1,5 +1,6 @@
 package com.arcrobotics.ftclib.drivebase;
 
+import com.arcrobotics.ftclib.geometry.Vector2d;
 import com.arcrobotics.ftclib.hardware.Motor;
 
 /**
@@ -77,7 +78,7 @@ public class MecanumDrive extends RobotDrive {
         ySpeed = clipRange(ySpeed);
 
         Vector2d input = new Vector2d(xSpeed, ySpeed);
-        input.rotate(-gyroAngle);
+        input = input.rotateBy(-gyroAngle);
 
         double theta = Math.atan2(ySpeed, xSpeed);
 
